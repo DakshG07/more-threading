@@ -18,6 +18,7 @@ public class Numbers {
 		}
 		System.out.println("Total Numbers: " + sum);
 		executor.shutdown();
+		System.out.println("Executor service complete.");
 	}
 }
 
