@@ -16,6 +16,7 @@ public class Numbers {
 		} catch (Exception e) {
 			System.out.println("something got messed up");
 		}
+		System.out.println("Total Numbers: " + sum);
 		executor.shutdown();
 	}
 }
