@@ -3,6 +3,7 @@ import java.util.concurrent.*;
 
 public class Numbers {
 	public static void main(String[] args) {
+		CodeTimer.start(); // Keep track of execution time
 		ExecutorService executor = Executors.newFixedThreadPool(1000);
 		ArrayList<Future<Integer>> futures = new ArrayList<>();
 		for (int i = 0; i < 1000; i++) {
@@ -17,8 +18,10 @@ public class Numbers {
 			System.out.println("something got messed up");
 		}
 		System.out.println("Total Numbers: " + sum);
+		String time = CodeTimer.stop("ms"); // Stop here so we don't track println time as well
+		System.out.println("Execution time: " + time);
 		executor.shutdown();
-		System.out.println("Executor service complete.");
+		System.out.println("Program complete.");
 	}
 }
 
